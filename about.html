@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Georgia Teleprompter</title>
+    <meta name="description" content="Learn about Georgia Teleprompter, part of the National Teleprompter network and Claduta Corp. 25+ years of professional teleprompting experience.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://georgiateleprompter.com/about.html">
+    
+    <meta name="geo.region" content="US-GA">
+    <meta name="geo.placename" content="Georgia">
+    
+    <style>
+        :root {
+            --bg-void: #0a0806;
+            --bg-deep: #0f0c09;
+            --bg-elevated: #1a1510;
+            --bg-card: #211a14;
+            
+            --bronze: #cd7f32;
+            --bronze-light: #daa06d;
+            --copper: #b87333;
+            --copper-dark: #8b5a2b;
+            
+            --text-bright: #faf6f0;
+            --text-primary: #e8dfd4;
+            --text-secondary: #a89a8a;
+            --text-muted: #6b5d4f;
+            
+            --border: rgba(205, 127, 50, 0.1);
+            --border-light: rgba(205, 127, 50, 0.2);
+            
+            --font-display: Arial, 'Helvetica Neue', sans-serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-void);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(10, 8, 6, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+        
+        .nav-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--bronze), var(--copper-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .nav-logo-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--text-bright);
+        }
+        
+        .nav-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .nav-logo-name {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: bold;
+            letter-spacing: 0;
+            color: var(--text-bright);
+            line-height: 1.2;
+        }
+        
+        .nav-logo-tagline {
+            font-size: 0.54rem;
+            color: var(--text-muted);
+            letter-spacing: -0.01em;
+            text-transform: uppercase;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+        
+        .nav-links a:hover { color: var(--bronze-light); }
+        
+        .nav-cta {
+            background: linear-gradient(135deg, var(--bronze), var(--copper-dark));
+            color: var(--text-bright) !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+        }
+        
+        .page-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .page-content h1 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--text-bright);
+            margin-bottom: 2rem;
+        }
+        
+        .page-content h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--text-bright);
+            margin: 2.5rem 0 1rem;
+        }
+        
+        .page-content p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        .page-content a {
+            color: var(--bronze-light);
+            text-decoration: none;
+        }
+        
+        .page-content a:hover {
+            text-decoration: underline;
+        }
+        
+        .corporate-structure {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .corporate-structure h3 {
+            font-family: var(--font-display);
+            color: var(--text-bright);
+            margin-bottom: 1rem;
+        }
+        
+        .structure-list {
+            list-style: none;
+            padding-left: 1rem;
+        }
+        
+        .structure-list li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            border-left: 2px solid var(--border);
+            padding-left: 1rem;
+            margin-left: 0.5rem;
+        }
+        
+        .structure-list li.active {
+            border-left-color: var(--bronze);
+            color: var(--bronze-light);
+        }
+        
+        .footer {
+            background: var(--bg-void);
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        
+        .footer a {
+            color: var(--bronze);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .page-content { padding-top: 6rem; }
+            .page-content h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="4" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="7" y1="8" x2="17" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="7" y1="11" x2="15" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="7" y1="14" x2="12" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M12 18 L12 21 M8 21 L16 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="nav-logo-text">
+                    <span class="nav-logo-name">Georgia Teleprompter</span>
+                    <span class="nav-logo-tagline">Powering Outstanding Performances</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#services">Services</a>
+                <a href="index.html#coverage">Coverage</a>
+                <a href="https://nationalteleprompter.com">Network</a>
+                <a href="index.html#contact" class="nav-cta">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <h1>About Georgia Teleprompter</h1>
+        
+        <p>Georgia Teleprompter is part of the National Teleprompter network, providing professional teleprompting services to productions throughout the Peach State. From Atlanta's bustling film studios to Savannah's historic venues, we deliver reliable, professional teleprompting for any production.</p>
+        
+        <h2>Our Network</h2>
+        
+        <p>As a member of the National Teleprompter network, Georgia Teleprompter benefits from over 25 years of combined experience, standardized equipment and training, and a proven track record of excellence across multiple states.</p>
+        
+        <div class="corporate-structure">
+            <h3>Corporate Structure</h3>
+            <ul class="structure-list">
+                <li><strong>Claduta Corp</strong> (South Dakota C Corporation - Parent Holding Company)</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;└ <strong>National Teleprompter</strong> (Network Operations & Brand)</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├ <a href="https://floridateleprompter.com">Florida Teleprompter</a></li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├ <a href="https://ohioteleprompter.com">Ohio Teleprompter</a></li>
+                <li class="active">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├ Georgia Teleprompter ← You are here</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ Additional states expanding...</li>
+            </ul>
+        </div>
+        
+        <h2>Serving Georgia's Film Industry</h2>
+        
+        <p>Georgia has become one of the top destinations for film and television production in the United States, earning the nickname "Hollywood of the South." With major studios like Pinewood Atlanta Studios and Tyler Perry Studios, plus generous state tax incentives, productions of all sizes choose Georgia as their home.</p>
+        
+        <p>Georgia Teleprompter is proud to serve this thriving industry, providing professional teleprompting services for feature films, television series, commercials, and more. Our operators understand the unique demands of film production and integrate seamlessly with existing production crews.</p>
+        
+        <h2>Our Services</h2>
+        
+        <p>We provide full-service teleprompting for live events, corporate productions, film and video shoots, and broadcast. Our experienced operators work with current-generation equipment to ensure flawless delivery every time.</p>
+        
+        <h2>Contact Us</h2>
+        
+        <p>Ready to discuss your next production? <a href="index.html#contact">Request a quote</a> or contact us directly:</p>
+        
+        <p>
+            Email: <a href="mailto:jason@floridateleprompter.com">jason@floridateleprompter.com</a><br>
+            Phone: <a href="tel:727-623-2652">727-623-2652</a>
+        </p>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 Georgia Teleprompter. A subsidiary of <a href="https://cladutacorp.com">Claduta Corp</a> | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a></p>
+    </footer>
+</body>
+</html>
