@@ -7,204 +7,34 @@
     <meta name="description" content="Privacy Policy for Georgia Teleprompter. Learn how we collect, use, and protect your information.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://georgiateleprompter.com/privacy.html">
-    
     <style>
-        :root {
-            --bg-void: #0a0806;
-            --bg-deep: #0f0c09;
-            --bg-elevated: #1a1510;
-            --bg-card: #211a14;
-            
-            --bronze: #cd7f32;
-            --bronze-light: #daa06d;
-            --copper: #b87333;
-            --copper-dark: #8b5a2b;
-            
-            --text-bright: #faf6f0;
-            --text-primary: #e8dfd4;
-            --text-secondary: #a89a8a;
-            --text-muted: #6b5d4f;
-            
-            --border: rgba(205, 127, 50, 0.1);
-            --border-light: rgba(205, 127, 50, 0.2);
-            
-            --font-display: Arial, 'Helvetica Neue', sans-serif;
-            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-        
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        html { scroll-behavior: smooth; }
-        
-        body {
-            font-family: var(--font-body);
-            background: var(--bg-void);
-            color: var(--text-primary);
-            line-height: 1.6;
-        }
-        
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 1rem 2rem;
-            background: rgba(10, 8, 6, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-        }
-        
-        .nav-logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--bronze), var(--copper-dark));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .nav-logo-icon svg {
-            width: 22px;
-            height: 22px;
-            fill: var(--text-bright);
-        }
-        
-        .nav-logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .nav-logo-name {
-            font-family: var(--font-display);
-            font-size: 1.35rem;
-            font-weight: bold;
-            letter-spacing: 0;
-            color: var(--text-bright);
-            line-height: 1.2;
-        }
-        
-        .nav-logo-tagline {
-            font-size: 0.54rem;
-            color: var(--text-muted);
-            letter-spacing: -0.01em;
-            text-transform: uppercase;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s ease;
-        }
-        
-        .nav-links a:hover { color: var(--bronze-light); }
-        
-        .nav-cta {
-            background: linear-gradient(135deg, var(--bronze), var(--copper-dark));
-            color: var(--text-bright) !important;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-        }
-        
-        .page-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 8rem 2rem 4rem;
-        }
-        
-        .page-content h1 {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            color: var(--text-bright);
-            margin-bottom: 0.5rem;
-        }
-        
-        .page-content .last-updated {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-        }
-        
-        .page-content h2 {
-            font-family: var(--font-display);
-            font-size: 1.25rem;
-            color: var(--text-bright);
-            margin: 2rem 0 1rem;
-        }
-        
-        .page-content p {
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-        }
-        
-        .page-content ul {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-            color: var(--text-secondary);
-        }
-        
-        .page-content li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .page-content a {
-            color: var(--bronze-light);
-            text-decoration: none;
-        }
-        
-        .page-content a:hover {
-            text-decoration: underline;
-        }
-        
-        .footer {
-            background: var(--bg-void);
-            padding: 2rem;
-            border-top: 1px solid var(--border);
-            text-align: center;
-        }
-        
-        .footer p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-        
-        .footer a {
-            color: var(--bronze);
-            text-decoration: none;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .page-content { padding-top: 6rem; }
-            .page-content h1 { font-size: 2rem; }
-        }
+:root{--gold:#F5B84C;--gold-light:#F5D89C;--bg-void:#0A0807;--bg-card:#211A15;--text-bright:#FAF7F2;--text-primary:#E8E0D6;--text-secondary:#A8988C;--text-muted:#6B5C50;--border:rgba(245,184,76,0.1);--font-display:Arial,'Helvetica Neue',sans-serif;--font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);background:var(--bg-void);color:var(--text-primary);line-height:1.6}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 2rem;background:rgba(10,8,7,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.nav-logo-icon{width:40px;height:40px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.nav-logo-text{display:flex;flex-direction:column}
+.nav-logo-name{font-family:var(--font-display);font-size:1.35rem;font-weight:bold;color:var(--text-bright);line-height:1.2}
+.nav-logo-tagline{font-size:.54rem;color:var(--text-muted);letter-spacing:-.01em;text-transform:uppercase}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:.9rem}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-cta{background:var(--gold);color:var(--bg-void)!important;padding:.6rem 1.2rem;border-radius:6px;font-weight:600}
+.page-content{max-width:800px;margin:0 auto;padding:8rem 2rem 4rem}
+.page-content h1{font-family:var(--font-display);font-size:2.5rem;color:var(--text-bright);margin-bottom:.5rem}
+.page-content .last-updated{color:var(--text-muted);font-size:.9rem;margin-bottom:2rem}
+.page-content h2{font-family:var(--font-display);font-size:1.25rem;color:var(--text-bright);margin:2rem 0 1rem}
+.page-content p{margin-bottom:1rem;color:var(--text-secondary)}
+.page-content ul{margin-bottom:1rem;padding-left:1.5rem;color:var(--text-secondary)}
+.page-content li{margin-bottom:.5rem}
+.page-content a{color:var(--gold);text-decoration:none}
+.page-content a:hover{text-decoration:underline}
+.footer{background:var(--bg-void);padding:2rem;border-top:1px solid var(--border);text-align:center}
+.footer p{color:var(--text-muted);font-size:.85rem}
+.footer a{color:var(--gold);text-decoration:none}
+@media(max-width:768px){.nav-links{display:none}.page-content{padding-top:6rem}.page-content h1{font-size:2rem}}
     </style>
 </head>
 <body>
@@ -212,12 +42,13 @@
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
                 <div class="nav-logo-icon">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3" y="4" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                        <line x1="7" y1="8" x2="17" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                        <line x1="7" y1="11" x2="15" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                        <line x1="7" y1="14" x2="12" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                        <path d="M12 18 L12 21 M8 21 L16 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="25" width="60" height="45" rx="3" fill="#1a1510"/><rect x="24" y="29" width="52" height="37" rx="2" fill="#3a3530"/>
+                        <path d="M40 35 L55 33 L60 38 L58 50 L55 58 L48 60 L42 55 L38 45 L40 35" fill="#6a6560"/>
+                        <line x1="32" y1="42" x2="48" y2="42" stroke="#F5B84C" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="32" y1="48" x2="52" y2="48" stroke="#F5B84C" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="32" y1="54" x2="45" y2="54" stroke="#F5B84C" stroke-width="2" stroke-linecap="round"/>
+                        <rect x="45" y="70" width="10" height="12" fill="#1a1510"/><rect x="35" y="82" width="30" height="5" rx="2" fill="#1a1510"/>
                     </svg>
                 </div>
                 <div class="nav-logo-text">
@@ -237,65 +68,31 @@
     <main class="page-content">
         <h1>Privacy Policy</h1>
         <p class="last-updated">Last Updated: December 2024</p>
-        
         <p>Georgia Teleprompter ("we," "our," or "us"), a subsidiary of Claduta Corp, is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website georgiateleprompter.com.</p>
         
         <h2>Information We Collect</h2>
-        
-        <p>We may collect information about you in a variety of ways:</p>
-        
-        <p><strong>Personal Data:</strong> When you submit a quote request form, we collect personally identifiable information such as your name, company name, email address, phone number, and event details that you voluntarily provide to us.</p>
-        
-        <p><strong>Derivative Data:</strong> Our servers may automatically collect information when you access our website, such as your IP address, browser type, operating system, access times, and the pages you have viewed.</p>
+        <p><strong>Personal Data:</strong> When you submit a quote request form, we collect personally identifiable information such as your name, company name, email address, phone number, and event details.</p>
+        <p><strong>Derivative Data:</strong> Our servers may automatically collect information when you access our website, such as your IP address, browser type, operating system, and access times.</p>
         
         <h2>Use of Your Information</h2>
-        
         <p>We may use information collected about you to:</p>
-        
         <ul>
             <li>Respond to your quote requests and inquiries</li>
             <li>Provide you with information about our services</li>
             <li>Improve our website and customer service</li>
-            <li>Send you marketing communications (with your consent)</li>
             <li>Comply with legal obligations</li>
         </ul>
         
         <h2>Disclosure of Your Information</h2>
+        <p><strong>Affiliates:</strong> We may share your information with our affiliates, including Claduta Corp and other National Teleprompter network companies.</p>
+        <p><strong>Third-Party Service Providers:</strong> We may share your information with third parties that perform services for us, such as form processing (Formspree) and website hosting (GitHub Pages).</p>
         
-        <p>We may share information we have collected about you in certain situations:</p>
-        
-        <p><strong>Business Transfers:</strong> If we are involved in a merger, acquisition, or sale of all or a portion of our assets, your information may be transferred as part of that transaction.</p>
-        
-        <p><strong>Affiliates:</strong> We may share your information with our affiliates, including Claduta Corp and other National Teleprompter network companies, in which case we will require those affiliates to honor this Privacy Policy.</p>
-        
-        <p><strong>Third-Party Service Providers:</strong> We may share your information with third parties that perform services for us, such as form processing (Formspree), website hosting (GitHub Pages), and email delivery.</p>
-        
-        <h2>Security of Your Information</h2>
-        
-        <p>We use administrative, technical, and physical security measures to protect your personal information. While we have taken reasonable steps to secure the information you provide to us, please be aware that no security measures are perfect or impenetrable.</p>
-        
-        <h2>Third-Party Websites</h2>
-        
-        <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these third-party sites. We encourage you to read the privacy policy of every website you visit.</p>
-        
-        <h2>Your Rights</h2>
-        
-        <p>Depending on your location, you may have certain rights regarding your personal information, including the right to access, correct, or delete your data. To exercise these rights, please contact us using the information below.</p>
-        
-        <h2>Changes to This Privacy Policy</h2>
-        
-        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+        <h2>Security</h2>
+        <p>We use administrative, technical, and physical security measures to protect your personal information. While we have taken reasonable steps to secure the information you provide, no security measures are perfect.</p>
         
         <h2>Contact Us</h2>
-        
-        <p>If you have questions or comments about this Privacy Policy, please contact us at:</p>
-        
-        <p>
-            Georgia Teleprompter<br>
-            A subsidiary of Claduta Corp<br>
-            Email: <a href="mailto:jason@floridateleprompter.com">jason@floridateleprompter.com</a><br>
-            Phone: <a href="tel:727-623-2652">727-623-2652</a>
-        </p>
+        <p>If you have questions about this Privacy Policy, please contact us:</p>
+        <p>Georgia Teleprompter<br>A subsidiary of Claduta Corp<br>Email: <a href="mailto:jason@floridateleprompter.com">jason@floridateleprompter.com</a><br>Phone: <a href="tel:727-623-2652">727-623-2652</a></p>
     </main>
 
     <footer class="footer">
