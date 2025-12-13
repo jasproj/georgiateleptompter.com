@@ -23,6 +23,8 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--font-body);background:var(--bg-void);color:var(--text-primary);line-height:1.6;overflow-x:hidden}
+
+/* Navigation */
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 2rem;background:linear-gradient(to bottom,var(--bg-void) 0%,transparent 100%);transition:background .3s}
 .nav.scrolled{background:rgba(8,9,11,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
 .nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
@@ -39,6 +41,8 @@ body{font-family:var(--font-body);background:var(--bg-void);color:var(--text-pri
 .nav-cta:hover{background:var(--gold-light)}
 .nav-mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem}
 .nav-mobile-toggle span{display:block;width:24px;height:2px;background:var(--text-primary);margin:5px 0;transition:.3s}
+
+/* Hero */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:8rem 2rem 4rem}
 .hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:70%;background:radial-gradient(ellipse at top,var(--spot-core) 0%,transparent 60%);animation:centralSpot 8s ease-in-out infinite;pointer-events:none}
 @keyframes centralSpot{0%,100%{opacity:.4}50%{opacity:.8}}
@@ -69,10 +73,13 @@ body{font-family:var(--font-body);background:var(--bg-void);color:var(--text-pri
 .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px)}
 .btn-secondary{background:transparent;color:var(--text-primary);border:1px solid var(--border-light)}
 .btn-secondary:hover{background:var(--bg-elevated);border-color:var(--gold)}
+
 section{padding:5rem 2rem}
 .section-label{font-size:.8rem;color:var(--gold);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
 .section-title{font-family:var(--font-display);font-size:clamp(1.75rem,4vw,2.25rem);color:var(--text-bright);margin-bottom:1rem}
 .section-subtitle{color:var(--text-secondary);font-size:1.05rem;max-width:600px}
+
+/* Services */
 .services{background:var(--bg-deep)}
 .services-container{max-width:1200px;margin:0 auto}
 .services-header{text-align:center;margin-bottom:3rem}
@@ -87,33 +94,77 @@ section{padding:5rem 2rem}
 .service-card-content{padding:1.5rem}
 .service-card h3{font-family:var(--font-display);font-size:1.1rem;color:var(--text-bright);margin-bottom:.5rem}
 .service-card p{color:var(--text-secondary);font-size:.9rem;line-height:1.5}
-.formatter{background:var(--bg-void)}
-.formatter-container{max-width:800px;margin:0 auto}
-.formatter-header{text-align:center;margin-bottom:2rem}
-.formatter-box{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:2rem}
-.formatter-dropzone{border:2px dashed var(--border-light);border-radius:8px;padding:3rem 2rem;text-align:center;cursor:pointer;transition:all .2s}
-.formatter-dropzone:hover,.formatter-dropzone.dragover{border-color:var(--gold);background:rgba(245,184,76,.05)}
-.formatter-dropzone-icon{font-size:3rem;margin-bottom:1rem}
-.formatter-dropzone p{color:var(--text-secondary);margin-bottom:.5rem}
-.formatter-dropzone small{color:var(--text-muted);font-size:.85rem}
-.formatter-output{margin-top:1.5rem;display:none}
-.formatter-output.active{display:block}
-.formatter-preview{background:var(--bg-elevated);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1rem;max-height:300px;overflow-y:auto;font-family:'Courier New',monospace;font-size:.9rem;white-space:pre-wrap;color:var(--text-primary)}
-.formatter-actions{display:flex;gap:1rem;justify-content:center}
-.coverage{background:var(--bg-deep)}
-.coverage-container{max-width:1200px;margin:0 auto}
+
+/* Coverage with Network Animation */
+.coverage{background:var(--bg-void);position:relative;overflow:hidden}
+.coverage-container{max-width:1200px;margin:0 auto;position:relative;z-index:2}
 .coverage-header{text-align:center;margin-bottom:3rem}
 .coverage-header .section-subtitle{margin:0 auto}
-.coverage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:4rem}
-.coverage-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:2rem;text-align:center;position:relative;overflow:hidden;transition:all .3s}
-.coverage-card:hover{border-color:var(--gold);transform:translateY(-4px)}
-.coverage-card-landmark{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80%;height:60%;opacity:.08;pointer-events:none}
-.coverage-card h3{font-family:var(--font-display);font-size:1.25rem;color:var(--text-bright);margin-bottom:.5rem;position:relative}
-.coverage-card p{color:var(--text-muted);font-size:.85rem;position:relative}
+.network-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.network-node{position:absolute;width:8px;height:8px;background:var(--gold);border-radius:50%;opacity:0.6;animation:nodeGlow 3s ease-in-out infinite}
+.network-node::after{content:'';position:absolute;top:50%;left:50%;width:200px;height:1px;background:linear-gradient(90deg,var(--gold) 0%,transparent 100%);transform-origin:left center;opacity:0.2}
+.network-node:nth-child(1){top:20%;left:30%;animation-delay:0s}
+.network-node:nth-child(1)::after{transform:rotate(25deg)}
+.network-node:nth-child(2){top:35%;left:55%;animation-delay:0.5s}
+.network-node:nth-child(2)::after{transform:rotate(-15deg)}
+.network-node:nth-child(3){top:60%;left:40%;animation-delay:1s}
+.network-node:nth-child(3)::after{transform:rotate(45deg)}
+.network-node:nth-child(4){top:45%;left:70%;animation-delay:1.5s}
+.network-node:nth-child(4)::after{transform:rotate(-35deg)}
+.network-node:nth-child(5){top:75%;left:25%;animation-delay:2s}
+.network-node:nth-child(5)::after{transform:rotate(10deg)}
+.network-node:nth-child(6){top:25%;left:75%;animation-delay:2.5s}
+.network-node:nth-child(6)::after{transform:rotate(-50deg)}
+.network-node:nth-child(7){top:80%;left:65%;animation-delay:0.8s}
+.network-node:nth-child(7)::after{transform:rotate(30deg)}
+.network-node:nth-child(8){top:50%;left:20%;animation-delay:1.8s}
+.network-node:nth-child(8)::after{transform:rotate(-20deg)}
+@keyframes nodeGlow{0%,100%{opacity:0.3;transform:scale(1)}50%{opacity:0.8;transform:scale(1.5)}}
+.network-pulse{position:absolute;border:1px solid var(--gold);border-radius:50%;opacity:0;animation:networkPulse 4s ease-out infinite}
+.network-pulse:nth-child(1){top:35%;left:55%;width:100px;height:100px;animation-delay:0s}
+.network-pulse:nth-child(2){top:45%;left:40%;width:150px;height:150px;animation-delay:1s}
+.network-pulse:nth-child(3){top:55%;left:60%;width:80px;height:80px;animation-delay:2s}
+@keyframes networkPulse{0%{opacity:0.4;transform:scale(0.5)}100%{opacity:0;transform:scale(2)}}
+.georgia-map{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:300px;height:350px;opacity:0.08}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;padding:3rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .stat{text-align:center}
 .stat-value{font-family:var(--font-display);font-size:2.5rem;font-weight:700;color:var(--gold);line-height:1}
 .stat-label{font-size:.85rem;color:var(--text-muted);margin-top:.5rem}
+
+/* Clients Section with Floating Names */
+.clients{background:var(--bg-deep);position:relative;overflow:hidden;padding:6rem 2rem}
+.clients-container{max-width:1200px;margin:0 auto;text-align:center;position:relative;z-index:2}
+.clients-header{margin-bottom:2rem}
+.clients-box{position:relative;height:300px;border:1px solid var(--border);border-radius:16px;background:var(--bg-card);overflow:hidden}
+.floating-name{position:absolute;font-family:var(--font-display);font-weight:600;color:var(--text-bright);white-space:nowrap;opacity:0.9;animation:floatAround 20s linear infinite}
+.floating-name:nth-child(1){font-size:1.1rem;animation-duration:25s}
+.floating-name:nth-child(2){font-size:1.3rem;animation-duration:22s;animation-delay:-5s}
+.floating-name:nth-child(3){font-size:1rem;animation-duration:28s;animation-delay:-10s}
+.floating-name:nth-child(4){font-size:1.4rem;animation-duration:20s;animation-delay:-3s}
+.floating-name:nth-child(5){font-size:1.2rem;animation-duration:24s;animation-delay:-8s}
+.floating-name:nth-child(6){font-size:1rem;animation-duration:26s;animation-delay:-12s}
+.floating-name:nth-child(7){font-size:1.3rem;animation-duration:23s;animation-delay:-6s}
+.floating-name:nth-child(8){font-size:1.1rem;animation-duration:27s;animation-delay:-15s}
+.floating-name:nth-child(9){font-size:1.2rem;animation-duration:21s;animation-delay:-2s}
+.floating-name:nth-child(10){font-size:1rem;animation-duration:29s;animation-delay:-9s}
+.floating-name:nth-child(11){font-size:1.4rem;animation-duration:19s;animation-delay:-4s}
+.floating-name:nth-child(12){font-size:1.1rem;animation-duration:25s;animation-delay:-11s}
+.floating-name:nth-child(13){font-size:1.3rem;animation-duration:22s;animation-delay:-7s}
+.floating-name:nth-child(14){font-size:1rem;animation-duration:28s;animation-delay:-13s}
+.floating-name:nth-child(15){font-size:1.2rem;animation-duration:24s;animation-delay:-1s}
+.floating-name:nth-child(16){font-size:1.1rem;animation-duration:26s;animation-delay:-14s}
+.floating-name:nth-child(17){font-size:1.3rem;animation-duration:20s;animation-delay:-6s}
+.floating-name:nth-child(18){font-size:1rem;animation-duration:27s;animation-delay:-9s}
+@keyframes floatAround{
+    0%{transform:translate(0,0)}
+    25%{transform:translate(calc(100% + 50px),80px)}
+    50%{transform:translate(50px,calc(100% - 50px))}
+    75%{transform:translate(calc(100% - 100px),30px)}
+    100%{transform:translate(0,0)}
+}
+.floating-name.gold{color:var(--gold)}
+
+/* Gallery */
 .gallery{background:var(--bg-void)}
 .gallery-container{max-width:1200px;margin:0 auto}
 .gallery-header{text-align:center;margin-bottom:3rem}
@@ -127,8 +178,12 @@ section{padding:5rem 2rem}
 .lightbox.active{display:flex}
 .lightbox-img{max-width:90%;max-height:90%;border-radius:8px}
 .lightbox-close{position:absolute;top:2rem;right:2rem;background:none;border:none;color:var(--text-primary);font-size:2rem;cursor:pointer}
-.contact{background:var(--bg-deep)}
-.contact-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+
+/* Contact with Background Image */
+.contact{background:var(--bg-deep);position:relative;overflow:hidden}
+.contact::before{content:'';position:absolute;inset:0;background:url('img-prompter.jpg') center/cover no-repeat;opacity:0.1;filter:grayscale(50%)}
+.contact::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--bg-deep) 0%,transparent 30%,transparent 70%,var(--bg-deep) 100%)}
+.contact-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;position:relative;z-index:2}
 .contact-info h2{font-family:var(--font-display);font-size:clamp(1.75rem,4vw,2.25rem);color:var(--text-bright);margin-bottom:1rem}
 .contact-info>p{color:var(--text-secondary);margin-bottom:2rem;line-height:1.7}
 .contact-details{display:flex;flex-direction:column;gap:1rem}
@@ -144,6 +199,8 @@ section{padding:5rem 2rem}
 .form-group textarea{min-height:120px;resize:vertical}
 .form-submit{margin-top:1.5rem}
 .form-submit .btn{width:100%;justify-content:center}
+
+/* Footer */
 .footer{background:var(--bg-void);padding:4rem 2rem 2rem;border-top:1px solid var(--border)}
 .footer-container{max-width:1200px;margin:0 auto}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
@@ -160,13 +217,37 @@ section{padding:5rem 2rem}
 .footer-legal{display:flex;gap:1.5rem}
 .footer-legal a{color:var(--text-muted);text-decoration:none;font-size:.85rem;transition:color .2s}
 .footer-legal a:hover{color:var(--text-secondary)}
-@media(max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr)}.coverage-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:768px){.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg-void);flex-direction:column;padding:1rem 2rem 2rem;gap:1rem;border-bottom:1px solid var(--border)}.nav-links.active{display:flex}.nav-mobile-toggle{display:block}.hero{padding-top:6rem}.services-grid,.coverage-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:repeat(2,1fr)}.contact-container{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.form-group.full-width{grid-column:1}.footer-grid{grid-template-columns:1fr;gap:2rem}.footer-bottom{flex-direction:column;text-align:center}}
-@media(max-width:480px){.hero h1{font-size:2rem}.hero-buttons{flex-direction:column}.btn{width:100%;justify-content:center}}
+
+/* Responsive */
+@media(max-width:1024px){
+    .services-grid{grid-template-columns:repeat(2,1fr)}
+    .gallery-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg-void);flex-direction:column;padding:1rem 2rem 2rem;gap:1rem;border-bottom:1px solid var(--border)}
+    .nav-links.active{display:flex}
+    .nav-mobile-toggle{display:block}
+    .hero{padding-top:6rem}
+    .services-grid{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .gallery-grid{grid-template-columns:repeat(2,1fr)}
+    .contact-container{grid-template-columns:1fr}
+    .form-grid{grid-template-columns:1fr}
+    .form-group.full-width{grid-column:1}
+    .footer-grid{grid-template-columns:1fr;gap:2rem}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .clients-box{height:250px}
+}
+@media(max-width:480px){
+    .hero h1{font-size:2rem}
+    .hero-buttons{flex-direction:column}
+    .btn{width:100%;justify-content:center}
+}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-container">
             <a href="#" class="nav-logo">
@@ -189,8 +270,7 @@ section{padding:5rem 2rem}
             </a>
             <div class="nav-links" id="navLinks">
                 <a href="#services">Services</a>
-                <a href="#formatter">Script Formatter</a>
-                <a href="#coverage">Coverage</a>
+                <a href="https://nationalteleprompter.com/#tool">Tools</a>
                 <a href="https://nationalteleprompter.com">Network</a>
                 <a href="#contact" class="nav-cta">Get a Quote</a>
             </div>
@@ -200,8 +280,8 @@ section{padding:5rem 2rem}
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero" id="hero">
-        <!-- Atlanta Skyline Background -->
         <div class="skyline-bg">
             <svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -218,52 +298,30 @@ section{padding:5rem 2rem}
                         <stop offset="100%" style="stop-color:transparent"/>
                     </radialGradient>
                 </defs>
-                
-                <!-- Subtle Peach (background element, left side) -->
                 <ellipse cx="180" cy="280" rx="60" ry="70" fill="url(#peachGrad)" opacity="0.4"/>
                 <path d="M180,210 Q180,190 175,180" stroke="rgba(245,200,140,0.2)" fill="none" stroke-width="3"/>
                 <ellipse cx="178" cy="178" rx="8" ry="5" fill="rgba(245,200,140,0.15)"/>
-                
-                <!-- Bank of America Plaza (tallest, distinctive spire) -->
                 <rect x="550" y="80" width="50" height="240" fill="url(#skylineGrad)"/>
                 <polygon points="550,80 575,30 600,80" fill="url(#skylineGrad)"/>
                 <rect x="570" y="20" width="10" height="20" fill="url(#skylineGrad)"/>
-                
-                <!-- SunTrust Plaza -->
                 <rect x="610" y="100" width="45" height="220" fill="url(#skylineGrad)"/>
                 <rect x="615" y="90" width="35" height="15" fill="url(#skylineGrad)"/>
-                
-                <!-- One Atlantic Center -->
                 <rect x="500" y="110" width="40" height="210" fill="url(#skylineGrad)"/>
                 <polygon points="500,110 520,95 540,110" fill="url(#skylineGrad)"/>
-                
-                <!-- 191 Peachtree Tower -->
                 <rect x="665" y="120" width="42" height="200" fill="url(#skylineGrad)"/>
-                
-                <!-- Westin Peachtree Plaza (cylinder) -->
                 <rect x="450" y="130" width="35" height="190" rx="5" fill="url(#skylineGrad)"/>
-                
-                <!-- Georgia-Pacific Tower -->
                 <rect x="715" y="140" width="38" height="180" fill="url(#skylineGrad)"/>
-                
-                <!-- Mercedes-Benz Stadium (dome shape, right side) -->
                 <ellipse cx="900" cy="320" rx="100" ry="40" fill="url(#domeLights)"/>
                 <path d="M800,320 Q850,260 900,250 Q950,260 1000,320" fill="url(#skylineGrad)" opacity="0.6"/>
                 <path d="M830,320 Q870,280 900,275 Q930,280 970,320" stroke="rgba(245,184,76,0.1)" fill="none" stroke-width="1"/>
-                
-                <!-- Smaller buildings -->
                 <rect x="380" y="180" width="30" height="140" fill="url(#skylineGrad)"/>
                 <rect x="345" y="200" width="28" height="120" fill="url(#skylineGrad)"/>
                 <rect x="760" y="170" width="32" height="150" fill="url(#skylineGrad)"/>
-                
-                <!-- Film reel accent (very subtle, top right) -->
                 <circle cx="1050" cy="80" r="30" stroke="rgba(245,184,76,0.08)" fill="none" stroke-width="2"/>
                 <circle cx="1050" cy="80" r="10" fill="rgba(245,184,76,0.05)"/>
                 <circle cx="1050" cy="80" r="22" stroke="rgba(245,184,76,0.05)" fill="none" stroke-width="1" stroke-dasharray="4 4"/>
             </svg>
         </div>
-        
-        <!-- Stage Foreground -->
         <div class="stage-bg">
             <svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -288,20 +346,13 @@ section{padding:5rem 2rem}
                 <ellipse cx="600" cy="340" rx="180" ry="50" fill="url(#spotGlow)"/>
             </svg>
         </div>
-        
-        <!-- Spotlights -->
         <div class="stage-lights">
             <div class="spotlight spotlight-1"></div>
             <div class="spotlight spotlight-2"></div>
             <div class="spotlight spotlight-3"></div>
         </div>
-        
-        <!-- Peach Ambient Glow -->
         <div class="peach-glow"></div>
-        
-        <!-- Stadium Lights Effect -->
         <div class="stadium-lights"></div>
-        
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="hero-badge-dot"></span>
@@ -310,12 +361,13 @@ section{padding:5rem 2rem}
             <h1>Professional Teleprompter Services for <em>Georgia</em></h1>
             <p class="hero-subtitle">Expert teleprompting for live events, corporate productions, film sets, and broadcast across Atlanta, Savannah, Augusta, and beyond. Serving Georgia's booming film industry.</p>
             <div class="hero-buttons">
-                <a href="#formatter" class="btn btn-primary">Try Script Formatter</a>
+                <a href="https://nationalteleprompter.com/#tool" class="btn btn-primary">Try Script Formatter</a>
                 <a href="#contact" class="btn btn-secondary">Request Quote</a>
             </div>
         </div>
     </section>
 
+    <!-- Services Section -->
     <section class="services" id="services">
         <div class="services-container">
             <div class="services-header">
@@ -370,69 +422,32 @@ section{padding:5rem 2rem}
         </div>
     </section>
 
-    <section class="formatter" id="formatter">
-        <div class="formatter-container">
-            <div class="formatter-header">
-                <p class="section-label">Free Tool</p>
-                <h2 class="section-title">Script Formatter</h2>
-                <p class="section-subtitle">Upload your script and we'll format it for teleprompter use. Accepts TXT and DOCX files.</p>
-            </div>
-            <div class="formatter-box">
-                <div class="formatter-dropzone" id="dropzone">
-                    <div class="formatter-dropzone-icon">📄</div>
-                    <p>Drag & drop your script here</p>
-                    <small>or click to browse (TXT, DOCX)</small>
-                    <input type="file" id="fileInput" accept=".txt,.docx" style="display:none">
-                </div>
-                <div class="formatter-output" id="output">
-                    <div class="formatter-preview" id="preview"></div>
-                    <div class="formatter-actions">
-                        <button class="btn btn-primary" id="downloadBtn">Download RTF</button>
-                        <button class="btn btn-secondary" id="resetBtn">Format Another</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Coverage with Network Animation -->
     <section class="coverage" id="coverage">
+        <div class="network-bg">
+            <!-- Network nodes with connecting lines -->
+            <div class="network-node"></div>
+            <div class="network-node"></div>
+            <div class="network-node"></div>
+            <div class="network-node"></div>
+            <div class="network-node"></div>
+            <div class="network-node"></div>
+            <div class="network-node"></div>
+            <div class="network-node"></div>
+            <!-- Pulsing circles -->
+            <div class="network-pulse"></div>
+            <div class="network-pulse"></div>
+            <div class="network-pulse"></div>
+            <!-- Georgia state outline -->
+            <svg class="georgia-map" viewBox="0 0 100 120" fill="var(--gold)">
+                <path d="M15 10 L55 5 L85 15 L90 25 L88 45 L92 65 L88 85 L80 100 L65 110 L45 115 L25 105 L15 85 L10 60 L12 35 Z"/>
+            </svg>
+        </div>
         <div class="coverage-container">
             <div class="coverage-header">
                 <p class="section-label">Service Area</p>
                 <h2 class="section-title">Statewide Georgia Coverage</h2>
-                <p class="section-subtitle">From Atlanta's film studios to Savannah's historic venues, we serve productions across the Peach State.</p>
-            </div>
-            <div class="coverage-grid">
-                <div class="coverage-card">
-                    <svg class="coverage-card-landmark" viewBox="0 0 100 100" fill="var(--gold)"><rect x="35" y="20" width="30" height="70" rx="1"/><polygon points="35,20 50,5 65,20"/></svg>
-                    <h3>Atlanta</h3>
-                    <p>Film Capital • Corporate Hub</p>
-                </div>
-                <div class="coverage-card">
-                    <svg class="coverage-card-landmark" viewBox="0 0 100 100" fill="var(--gold)"><path d="M10 80 Q30 70 50 75 Q70 80 90 70" stroke="currentColor" fill="none" stroke-width="3"/><rect x="20" y="40" width="15" height="35"/><rect x="42" y="35" width="16" height="40"/></svg>
-                    <h3>Savannah</h3>
-                    <p>Film Production • Historic Events</p>
-                </div>
-                <div class="coverage-card">
-                    <svg class="coverage-card-landmark" viewBox="0 0 100 100" fill="var(--gold)"><ellipse cx="50" cy="75" rx="35" ry="8"/><path d="M25 75 Q25 50 50 45 Q75 50 75 75" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="50" cy="25" r="5"/></svg>
-                    <h3>Augusta</h3>
-                    <p>Corporate • Golf Events</p>
-                </div>
-                <div class="coverage-card">
-                    <svg class="coverage-card-landmark" viewBox="0 0 100 100" fill="var(--gold)"><rect x="30" y="50" width="40" height="30"/><polygon points="25,50 50,30 75,50"/></svg>
-                    <h3>Athens</h3>
-                    <p>University • Cultural Events</p>
-                </div>
-                <div class="coverage-card">
-                    <svg class="coverage-card-landmark" viewBox="0 0 100 100" fill="var(--gold)"><rect x="25" y="45" width="50" height="35"/><circle cx="50" cy="60" r="8"/></svg>
-                    <h3>Macon</h3>
-                    <p>Music • Entertainment</p>
-                </div>
-                <div class="coverage-card">
-                    <svg class="coverage-card-landmark" viewBox="0 0 100 100" fill="var(--gold)"><path d="M20 30 L45 25 L70 35 L75 70 L65 80 L40 85 L25 75 L15 50 Z"/></svg>
-                    <h3>+ Statewide</h3>
-                    <p>Columbus • Albany • All of Georgia</p>
-                </div>
+                <p class="section-subtitle">From Atlanta's film studios to Savannah's historic venues, we serve productions across the entire Peach State.</p>
             </div>
             <div class="stats-grid">
                 <div class="stat"><div class="stat-value">25+</div><div class="stat-label">Years Experience</div></div>
@@ -443,6 +458,37 @@ section{padding:5rem 2rem}
         </div>
     </section>
 
+    <!-- Clients Section with Floating Names -->
+    <section class="clients" id="clients">
+        <div class="clients-container">
+            <div class="clients-header">
+                <p class="section-label">Trusted By</p>
+                <h2 class="section-title">Industry Leaders Choose Us</h2>
+            </div>
+            <div class="clients-box">
+                <span class="floating-name gold" style="top:10%;left:5%">Shaquille O'Neal</span>
+                <span class="floating-name" style="top:25%;left:60%">Tampa Bay Buccaneers</span>
+                <span class="floating-name gold" style="top:45%;left:15%">Disney</span>
+                <span class="floating-name" style="top:65%;left:70%">Tony Dungy</span>
+                <span class="floating-name" style="top:15%;left:35%">John Travolta</span>
+                <span class="floating-name gold" style="top:75%;left:25%">Tim Tebow</span>
+                <span class="floating-name" style="top:35%;left:80%">AmeriLife</span>
+                <span class="floating-name" style="top:55%;left:45%">Liza Minnelli</span>
+                <span class="floating-name gold" style="top:80%;left:55%">Diana Ross</span>
+                <span class="floating-name" style="top:20%;left:15%">NHL All-Star Game</span>
+                <span class="floating-name" style="top:50%;left:5%">NASCAR</span>
+                <span class="floating-name gold" style="top:40%;left:55%">Ford</span>
+                <span class="floating-name" style="top:70%;left:40%">John Cena</span>
+                <span class="floating-name" style="top:30%;left:25%">Publix</span>
+                <span class="floating-name gold" style="top:60%;left:85%">Home Depot</span>
+                <span class="floating-name" style="top:85%;left:10%">Toronto Blue Jays</span>
+                <span class="floating-name" style="top:5%;left:75%">Jose Bautista</span>
+                <span class="floating-name gold" style="top:90%;left:75%">Mindvalley</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
     <section class="gallery" id="gallery">
         <div class="gallery-container">
             <div class="gallery-header">
@@ -462,11 +508,13 @@ section{padding:5rem 2rem}
         </div>
     </section>
 
+    <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" id="lightboxClose">&times;</button>
         <img class="lightbox-img" id="lightboxImg" src="" alt="">
     </div>
 
+    <!-- Contact Section with Background Image -->
     <section class="contact" id="contact">
         <div class="contact-container">
             <div class="contact-info">
@@ -495,6 +543,7 @@ section{padding:5rem 2rem}
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-grid">
@@ -550,30 +599,18 @@ section{padding:5rem 2rem}
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
     <script>
 const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.pageYOffset>50)});
 const navToggle=document.getElementById('navToggle'),navLinks=document.getElementById('navLinks');
 navToggle.addEventListener('click',()=>navLinks.classList.toggle('active'));
 navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('active')));
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));t&&t.scrollIntoView({behavior:'smooth',block:'start'})})});
-const dropzone=document.getElementById('dropzone'),fileInput=document.getElementById('fileInput'),output=document.getElementById('output'),preview=document.getElementById('preview'),downloadBtn=document.getElementById('downloadBtn'),resetBtn=document.getElementById('resetBtn');
-let formattedText='';
-dropzone.addEventListener('click',()=>fileInput.click());
-dropzone.addEventListener('dragover',e=>{e.preventDefault();dropzone.classList.add('dragover')});
-dropzone.addEventListener('dragleave',()=>dropzone.classList.remove('dragover'));
-dropzone.addEventListener('drop',e=>{e.preventDefault();dropzone.classList.remove('dragover');const f=e.dataTransfer.files[0];f&&processFile(f)});
-fileInput.addEventListener('change',e=>{const f=e.target.files[0];f&&processFile(f)});
-function processFile(f){const ext=f.name.split('.').pop().toLowerCase();if(ext==='txt'){const r=new FileReader();r.onload=e=>formatScript(e.target.result);r.readAsText(f)}else if(ext==='docx'){const r=new FileReader();r.onload=e=>{mammoth.extractRawText({arrayBuffer:e.target.result}).then(res=>formatScript(res.value)).catch(err=>alert('Error: '+err))};r.readAsArrayBuffer(f)}else alert('Please upload TXT or DOCX')}
-function formatScript(t){formattedText=t.toUpperCase().replace(/\n{3,}/g,'\n\n').trim();preview.textContent=formattedText;dropzone.style.display='none';output.classList.add('active')}
-downloadBtn.addEventListener('click',()=>{const rtf=`{\\rtf1\\ansi\\deff0{\\fonttbl{\\f0 Arial;}}\\paperw12240\\paperh15840\\margl2880\\margr2880\\f0\\fs48\\sl480\\slmult1 ${formattedText.replace(/\n/g,'\\par\\par ')}}`;const blob=new Blob([rtf],{type:'application/rtf'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='teleprompter-script.rtf';a.click();URL.revokeObjectURL(url)});
-resetBtn.addEventListener('click',()=>{formattedText='';preview.textContent='';output.classList.remove('active');dropzone.style.display='block';fileInput.value=''});
 const galleryItems=document.querySelectorAll('.gallery-item'),lightbox=document.getElementById('lightbox'),lightboxImg=document.getElementById('lightboxImg'),lightboxClose=document.getElementById('lightboxClose');
 galleryItems.forEach(i=>i.addEventListener('click',()=>{lightboxImg.src=i.dataset.src;lightbox.classList.add('active')}));
 lightboxClose.addEventListener('click',()=>lightbox.classList.remove('active'));
 lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.classList.remove('active')});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')lightbox.classList.remove('active')});
-document.addEventListener('visibilitychange',()=>{document.querySelectorAll('.spotlight').forEach(el=>{el.style.animationPlayState=document.hidden?'paused':'running'})});
+document.addEventListener('visibilitychange',()=>{document.querySelectorAll('.spotlight,.floating-name,.network-node,.network-pulse').forEach(el=>{el.style.animationPlayState=document.hidden?'paused':'running'})});
     </script>
 </body>
 </html>
