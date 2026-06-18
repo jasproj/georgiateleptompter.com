@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Georgia Teleprompter</title>
+    <meta name="description" content="Teleprompter tips, industry insights, and event guides from Georgia Teleprompter. Expert advice for Atlanta, Savannah, Augusta, and throughout Georgia.">
+    <link rel="canonical" href="https://georgiateleprompter.com/blog/">
+    
+    <style>
+        :root {
+            --gold: #F5B84C;
+            --gold-dark: #D9A43E;
+            --bg-main: #E8E6E3;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #4A4A4A;
+            --font-display: Arial, 'Helvetica Neue', sans-serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font-body); background: var(--bg-main); color: var(--text-primary); line-height: 1.7; }
+        a { color: var(--gold-dark); text-decoration: none; }
+        a:hover { color: var(--gold); }
+        
+        .header {
+            background: var(--bg-card);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 60px; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--text-secondary); font-weight: 500; }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--text-primary) 0%, #2a2a2a 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .page-header h1 { font-family: var(--font-display); font-size: 2.5rem; margin-bottom: 1rem; }
+        .page-header p { color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto; }
+        
+        .blog-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .blog-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        .blog-card h2 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.75rem; }
+        .blog-card h2 a { color: var(--text-primary); }
+        .blog-card h2 a:hover { color: var(--gold-dark); }
+        .blog-card .meta { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem; }
+        .blog-card p { color: var(--text-secondary); }
+        .blog-card .read-more { display: inline-block; margin-top: 1rem; font-weight: 600; color: var(--gold-dark); }
+        
+        .footer { background: var(--text-primary); color: white; padding: 2rem; text-align: center; margin-top: 3rem; }
+        .footer a { color: var(--gold); }
+        
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 1.75rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/"><img src="../GA-Logo-Banner.png" alt="Georgia Teleprompter" class="logo-img"></a>
+            <ul class="nav-links">
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#gallery">Gallery</a></li>
+                <li><a href="/#contact">Contact</a></li>
+                <li><a href="/blog/">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="page-header">
+        <h1>Teleprompter Insights & Tips</h1>
+        <p>Expert guidance for your next production, event, or broadcast in Georgia</p>
+    </div>
+    
+    <div class="blog-grid">
+        <article class="blog-card">
+            <h2><a href="blog-hospital-galas-teleprompter.html">Teleprompter Services for Hospital Galas & Healthcare Fundraisers</a></h2>
+            <div class="meta">June 2026 • 5 min read</div>
+            <p>Hospital galas and healthcare fundraising events represent some of the most important nights on a nonprofit's calendar. Learn how professional teleprompter services ensure flawless speeches at your Atlanta, Savannah, or Augusta gala.</p>
+            <a href="blog-hospital-galas-teleprompter.html" class="read-more">Read More →</a>
+        </article>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; 2026 Georgia Teleprompter. Part of the <a href="https://nationalteleprompter.com">National Teleprompter</a> Network.</p>
+    </footer>
+</body>
+</html>
