@@ -481,7 +481,7 @@
             margin: 0 0 14px; font-family: var(--font-display); font-weight: 700;
             font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim);
         }
-        .hero-form-grid { display: grid; gap: 10px; grid-template-columns: repeat(4, 1fr) auto; }
+        .hero-form-grid { display: grid; gap: 10px; grid-template-columns: repeat(5, 1fr) auto; }
         .hero-form input {
             width: 100%; padding: 15px 14px; background: var(--bg); color: var(--text);
             border: 1px solid rgba(255,255,255,.16); border-radius: 3px; font: inherit; font-size: .95rem;
@@ -567,7 +567,8 @@
                 <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <div class="hero-form-grid">
                     <input type="text" name="name" placeholder="Name" aria-label="Name" required autocomplete="name">
-                    <input type="text" name="contact" placeholder="Phone or email" aria-label="Phone or email" required autocomplete="email">
+                    <input type="email" name="email" placeholder="Email" aria-label="Email" required autocomplete="email">
+                    <input type="tel" name="phone" placeholder="Phone (optional)" aria-label="Phone" autocomplete="tel">
                     <input type="date" name="date" aria-label="Event date" required>
                     <input type="text" name="venue" placeholder="City or venue" aria-label="City or venue" required>
                     <button type="submit" class="btn btn-primary">Check Availability</button>
